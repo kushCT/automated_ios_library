@@ -46,6 +46,7 @@
 		04DB5937266A348C0020A7E8 /* RiveRuntime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A8F6BD26452E10002C909A /* RiveRuntime.framework */; };
 		04DB5938266A348C0020A7E8 /* RiveRuntime.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 04A8F6BD26452E10002C909A /* RiveRuntime.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		04F1C80B26A8442300CEE6BE /* two_bone_ik.riv in Resources */ = {isa = PBXBuildFile; fileRef = 04F1C80826A8442300CEE6BE /* two_bone_ik.riv */; };
+		C31AFDEF27DA9AF30061E5DD /* RiveSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31AFDEE27DA9AF30061E5DD /* RiveSlider.swift */; };
 		C9A84F38264495600014D8E0 /* RiveExplorer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A84F37264495600014D8E0 /* RiveExplorer.swift */; };
 		C9A84F5E2644A75A0014D8E0 /* ExamplesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A84F5D2644A75A0014D8E0 /* ExamplesViewController.swift */; };
 		C9A84F602644AB6B0014D8E0 /* RiveExplorerBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A84F5F2644AB6B0014D8E0 /* RiveExplorerBridge.swift */; };
@@ -136,6 +137,7 @@
 		04C4C83D2646FE410047E614 /* StateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachine.swift; sourceTree = "<group>"; };
 		04D5B069266A460C004ACA5B /* nothing.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = nothing.riv; sourceTree = "<group>"; };
 		04F1C80826A8442300CEE6BE /* two_bone_ik.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = two_bone_ik.riv; sourceTree = "<group>"; };
+		C31AFDEE27DA9AF30061E5DD /* RiveSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiveSlider.swift; sourceTree = "<group>"; };
 		C9A84F37264495600014D8E0 /* RiveExplorer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiveExplorer.swift; sourceTree = "<group>"; };
 		C9A84F5D2644A75A0014D8E0 /* ExamplesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamplesViewController.swift; sourceTree = "<group>"; };
 		C9A84F5F2644AB6B0014D8E0 /* RiveExplorerBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiveExplorerBridge.swift; sourceTree = "<group>"; };
@@ -202,6 +204,14 @@
 			path = lib;
 			sourceTree = "<group>";
 		};
+		C31AFDE927DA99B00061E5DD /* RiveSlider */ = {
+			isa = PBXGroup;
+			children = (
+				C31AFDEE27DA9AF30061E5DD /* RiveSlider.swift */,
+			);
+			path = RiveSlider;
+			sourceTree = "<group>";
+		};
 		C9696B0E24FC6FD10041502A /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,6 +250,7 @@
 		C9A84F342644931E0014D8E0 /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				C31AFDE927DA99B00061E5DD /* RiveSlider */,
 				C9D3DE5C264F3B5C001BA265 /* ProgressBar */,
 				C9D3DE59264F309F001BA265 /* Explorer */,
 				C9D3DE58264F308B001BA265 /* Switch */,
@@ -486,6 +497,7 @@
 				04026DC427CE3ED6002B3DBF /* SwiftSimpleAnimation.swift in Sources */,
 				04026DCE27CE3F0F002B3DBF /* SwiftStateMachine.swift in Sources */,
 				C9E0409D264DEAA2009ABC7C /* RiveButton.swift in Sources */,
+				C31AFDEF27DA9AF30061E5DD /* RiveSlider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
