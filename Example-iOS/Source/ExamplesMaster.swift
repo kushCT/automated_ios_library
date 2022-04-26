@@ -27,14 +27,15 @@ class ExamplesMasterTableViewController: UITableViewController {
     // MARK: SwiftUI View Examples
     /// Made from custom `Views`
     private lazy var swiftViews: [(String, AnyView)] = [
+        ("Touch Events!",       typeErased(dismissableView: SwiftTouchEvents())),
+        //("Lighthouse",          typeErased(dismissableView: SwiftSwitchEvent())),
         ("Widget Collection",   typeErased(dismissableView: SwiftWidgets())),
         ("Simple Animation",    typeErased(dismissableView: SwiftSimpleAnimation())),
         ("Layout",              typeErased(dismissableView: SwiftLayout())),
         ("MultipleAnimations",  typeErased(dismissableView: SwiftMultipleAnimations())),
         ("Loop Mode",           typeErased(dismissableView: SwiftLoopMode())),
         ("State Machine",       typeErased(dismissableView: SwiftStateMachine())),
-        ("Mesh Animation",      typeErased(dismissableView: SwiftMeshAnimation())),
-        ("Touch Events",        typeErased(dismissableView: SwiftTouchEvents()))
+        ("Mesh Animation",      typeErased(dismissableView: SwiftMeshAnimation()))
     ]
     
     
