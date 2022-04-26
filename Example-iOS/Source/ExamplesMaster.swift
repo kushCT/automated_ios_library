@@ -33,7 +33,8 @@ class ExamplesMasterTableViewController: UITableViewController {
         ("MultipleAnimations",  typeErased(dismissableView: SwiftMultipleAnimations())),
         ("Loop Mode",           typeErased(dismissableView: SwiftLoopMode())),
         ("State Machine",       typeErased(dismissableView: SwiftStateMachine())),
-        ("Mesh Animation",      typeErased(dismissableView: SwiftMeshAnimation()))
+        ("Mesh Animation",      typeErased(dismissableView: SwiftMeshAnimation())),
+        ("Touch Events",        typeErased(dismissableView: SwiftTouchEvents()))
     ]
     
     

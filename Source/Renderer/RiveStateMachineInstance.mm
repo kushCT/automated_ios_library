@@ -205,6 +205,22 @@
     return inputNames;
 }
 
+- (void)touchBeganAtLocation:(CGPoint)touchLocation {
+    instance->pointerDown(rive::Vec2D(touchLocation.x, touchLocation.y));
+}
+
+- (void)touchMovedAtLocation:(CGPoint)touchLocation {
+    instance->pointerMove(rive::Vec2D(touchLocation.x, touchLocation.y));
+}
+
+- (void)touchEndedAtLocation:(CGPoint)touchLocation {
+    instance->pointerUp(rive::Vec2D(touchLocation.x, touchLocation.y));
+}
+
+- (void)touchCancelledAtLocation:(CGPoint)touchLocation {
+    instance->pointerUp(rive::Vec2D(touchLocation.x, touchLocation.y));
+}
+
 - (void)dealloc {
     delete instance;
 }
