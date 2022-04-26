@@ -864,56 +864,36 @@ extension RiveView {
     open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let location = touches.first!.location(in: self)
         
-        let artboardLocation = artboardLocation(
-            fromTouchLocation: location,
-            inArtboard: artboard!.bounds(),
-            fit: fit,
-            alignment: alignment
-        )
-        
-        for stateMachine in playingStateMachines {
-            stateMachine.touchBegan(atLocation: artboardLocation)
-        }
-
+        handleTouch(location: location) { $0.touchBegan(atLocation: $1) }
         touchDelegate?.touchBegan?(onArtboard: artboard, atLocation: location)
     }
     
     open override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         let location = touches.first!.location(in: self)
         
-        let artboardLocation = artboardLocation(
-            fromTouchLocation: location,
-            inArtboard: artboard!.bounds(),
-            fit: fit,
-            alignment: alignment
-        )
-        
-        for stateMachine in playingStateMachines {
-            stateMachine.touchMoved(atLocation: artboardLocation)
-        }
+        handleTouch(location: location) { $0.touchMoved(atLocation: $1) }
         touchDelegate?.touchMoved?(onArtboard: artboard, atLocation: location)
     }
     
     open override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         let location = touches.first!.location(in: self)
         
-        let artboardLocation = artboardLocation(
-            fromTouchLocation: location,
-            inArtboard: artboard!.bounds(),
-            fit: fit,
-            alignment: alignment
-        )
-        
-        for stateMachine in playingStateMachines {
-            stateMachine.touchEnded(atLocation: artboardLocation)
-        }
-        
+        handleTouch(location: location) { $0.touchEnded(atLocation: $1) }
         touchDelegate?.touchEnded?(onArtboard: artboard, atLocation: location)
     }
     
     open override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         let location = touches.first!.location(in: self)
         
+        handleTouch(location: location) { $0.touchCancelled(atLocation: $1) }
+        touchDelegate?.touchCancelled?(onArtboard: artboard, atLocation: location)
+    }
+    
+    /// Sends incoming touch event to all playing `RiveStateMachineInstance`'s
+    /// - Parameters:
+    ///   - location: The `CGPoint` where the touch occurred in `RiveView` coordinate space
+    ///   - action: Param1: A playing `RiveStateMachineInstance`, Param2: `CGPoint` location where touch occurred in `artboard` coordinate space
+    private func handleTouch(location: CGPoint, action: (RiveStateMachineInstance, CGPoint)->Void) {
         let artboardLocation = artboardLocation(
             fromTouchLocation: location,
             inArtboard: artboard!.bounds(),
@@ -922,9 +902,7 @@ extension RiveView {
         )
         
         for stateMachine in playingStateMachines {
-            stateMachine.touchCancelled(atLocation: artboardLocation)
+            action(stateMachine, artboardLocation)
         }
-        
-        touchDelegate?.touchCancelled?(onArtboard: artboard, atLocation: location)
     }
 }

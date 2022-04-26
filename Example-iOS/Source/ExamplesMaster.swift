@@ -43,11 +43,9 @@ class ExamplesMasterTableViewController: UITableViewController {
     private let viewModels: [(String, RiveViewModel)] = [
         ("Slider Widget",       RiveSlider())
     ]
-    
-    
-    // MARK: -
-    
-    
+}
+
+extension ExamplesMasterTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         
