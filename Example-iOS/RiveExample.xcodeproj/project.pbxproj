@@ -59,7 +59,7 @@
 		C3ECAC2B281837B300A81123 /* play_button_event_example.riv in Resources */ = {isa = PBXBuildFile; fileRef = C3ECAC28281837B300A81123 /* play_button_event_example.riv */; };
 		C3ECAC2C281837B300A81123 /* leg_day_events_example.riv in Resources */ = {isa = PBXBuildFile; fileRef = C3ECAC29281837B300A81123 /* leg_day_events_example.riv */; };
 		C3ECAC2D281837B300A81123 /* switch_event_example.riv in Resources */ = {isa = PBXBuildFile; fileRef = C3ECAC2A281837B300A81123 /* switch_event_example.riv */; };
-		C3ECAC2F281840A300A81123 /* TouchEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3ECAC2E281840A300A81123 /* TouchEvents.swift */; };
+		C3ECAC2F281840A300A81123 /* ClockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3ECAC2E281840A300A81123 /* ClockViewModel.swift */; };
 		C3ECAC31281840EF00A81123 /* watch_v1.riv in Resources */ = {isa = PBXBuildFile; fileRef = C3ECAC30281840EF00A81123 /* watch_v1.riv */; };
 		C9BD3926263B5FC700696C37 /* truck_v7.riv in Resources */ = {isa = PBXBuildFile; fileRef = C9BD3925263B5FC700696C37 /* truck_v7.riv */; };
 		C9C73E9824FC471E00EF9516 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C73E9724FC471E00EF9516 /* AppDelegate.swift */; };
@@ -159,7 +159,7 @@
 		C3ECAC28281837B300A81123 /* play_button_event_example.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = play_button_event_example.riv; sourceTree = "<group>"; };
 		C3ECAC29281837B300A81123 /* leg_day_events_example.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = leg_day_events_example.riv; sourceTree = "<group>"; };
 		C3ECAC2A281837B300A81123 /* switch_event_example.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = switch_event_example.riv; sourceTree = "<group>"; };
-		C3ECAC2E281840A300A81123 /* TouchEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchEvents.swift; sourceTree = "<group>"; };
+		C3ECAC2E281840A300A81123 /* ClockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockViewModel.swift; sourceTree = "<group>"; };
 		C3ECAC30281840EF00A81123 /* watch_v1.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = watch_v1.riv; sourceTree = "<group>"; };
 		C9BD3925263B5FC700696C37 /* truck_v7.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = truck_v7.riv; sourceTree = "<group>"; };
 		C9C73E9424FC471E00EF9516 /* RiveExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RiveExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -220,31 +220,24 @@
 			path = lib;
 			sourceTree = "<group>";
 		};
-		C324DB592807202A0060589F /* Widgets */ = {
-			isa = PBXGroup;
-			children = (
-				C324DB5C280728690060589F /* RiveButton.swift */,
-				C324DB5528071EB80060589F /* RiveSwitch.swift */,
-				C324DB5A2807216B0060589F /* RiveSlider.swift */,
-				C3D187F2280751A8008B739A /* RiveProgressBar.swift */,
-			);
-			path = Widgets;
-			sourceTree = "<group>";
-		};
-		C3ECAC322818608B00A81123 /* ExampleViews */ = {
+		C3ECAC322818608B00A81123 /* Examples */ = {
 			isa = PBXGroup;
 			children = (
 				C3ECAC33281860E900A81123 /* ViewModel */,
 				042C88862643DB2200E7DBB2 /* Storyboard */,
 				C9A84F342644931E0014D8E0 /* SwiftUI */,
 			);
-			path = ExampleViews;
+			path = Examples;
 			sourceTree = "<group>";
 		};
 		C3ECAC33281860E900A81123 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				C3ECAC2E281840A300A81123 /* TouchEvents.swift */,
+				C324DB5C280728690060589F /* RiveButton.swift */,
+				C324DB5528071EB80060589F /* RiveSwitch.swift */,
+				C324DB5A2807216B0060589F /* RiveSlider.swift */,
+				C3D187F2280751A8008B739A /* RiveProgressBar.swift */,
+				C3ECAC2E281840A300A81123 /* ClockViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -333,8 +326,7 @@
 			children = (
 				042C88822643D6B900E7DBB2 /* Main.storyboard */,
 				C3357CA0280F42EC00F03B6F /* ExamplesMaster.swift */,
-				C324DB592807202A0060589F /* Widgets */,
-				C3ECAC322818608B00A81123 /* ExampleViews */,
+				C3ECAC322818608B00A81123 /* Examples */,
 				C9C73E9D24FC471E00EF9516 /* Assets.xcassets */,
 				C9C73E9F24FC471E00EF9516 /* Preview Content */,
 				04A8F6C226452F25002C909A /* lib */,
@@ -506,7 +498,7 @@
 				C3357CA1280F42EC00F03B6F /* ExamplesMaster.swift in Sources */,
 				C324DB5628071EB80060589F /* RiveSwitch.swift in Sources */,
 				C3ECAC272817BE4600A81123 /* SwiftTouchEvents.swift in Sources */,
-				C3ECAC2F281840A300A81123 /* TouchEvents.swift in Sources */,
+				C3ECAC2F281840A300A81123 /* ClockViewModel.swift in Sources */,
 				04026DC827CE3EE6002B3DBF /* SwiftLayout.swift in Sources */,
 				04026DCC27CE3F03002B3DBF /* SwiftLoopMode.swift in Sources */,
 				C9C73E9A24FC471E00EF9516 /* SceneDelegate.swift in Sources */,
