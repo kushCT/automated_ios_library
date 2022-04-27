@@ -338,6 +338,7 @@ extension RiveView {
             } else if let stateMachineName = configOptions?.stateMachineName {
                 try play(animationName: stateMachineName, isStateMachine: true)
             } else {
+                // DELETE THIS: Zach - playingAnimations.insert() is called through this
                 try play()
             }
         } else {
@@ -565,6 +566,7 @@ extension RiveView {
         }
     }
     
+// DELETE THIS: Zach - playingAnimations.insert() is called through this
     /// Play the first animation of the loaded artboard
     /// - Parameters:
     ///   - loop: provide a `Loop` to overwrite the loop mode used to play the animation.
@@ -576,6 +578,7 @@ extension RiveView {
         runTimer()
     }
     
+// DELETE THIS: Zach - playingAnimations.insert() is called through this
     /// Plays the specified animation or state machine with optional loop and directions
     /// - Parameters:
     ///   - animationName: name of the animation to play
@@ -592,6 +595,7 @@ extension RiveView {
         runTimer()
     }
     
+// DELETE THIS: Zach - playingAnimations.insert() is called through this
     /// Plays the list of animations or state machines with optional loop and directions
     /// - Parameters:
     ///   - animationNames: list of names of the animations to play
@@ -777,7 +781,9 @@ extension RiveView {
     }
     
     private func _stateMachines(withAnimationNames animationNames: [String]) -> [RiveStateMachineInstance] {
-        return stateMachines.filter { animationNames.contains($0.stateMachine().name()) }
+        return stateMachines.filter {
+            animationNames.contains($0.stateMachine().name())
+        }
     }
     
     private func _play(animation: RiveLinearAnimationInstance, loop: Loop, direction: Direction) {
@@ -901,7 +907,7 @@ extension RiveView {
             alignment: alignment
         )
         
-        for stateMachine in playingStateMachines {
+        for stateMachine in stateMachines {
             action(stateMachine, artboardLocation)
         }
     }

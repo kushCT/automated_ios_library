@@ -15,38 +15,26 @@ struct SwiftTouchEvents: DismissableView {
     var body: some View {
         ScrollView {
             VStack {
-                RiveViewModel(fileName: "play_button_event_example", stateMachineName: "State Machine")
-                    .view()
-                    .aspectRatio(1, contentMode: .fit)
-                
-//                RiveViewModel(fileName: "switch_event_example", stateMachineName: "Main State Machine")
+//                RiveViewModel(fileName: "play_button_event_example", stateMachineName: "State Machine")
 //                    .view()
 //                    .aspectRatio(1, contentMode: .fit)
                 
-                RiveViewModel(fileName: "magic_8-ball_v2", stateMachineName: "Main State Machine")
+                RiveViewModel(fileName: "switch_event_example", stateMachineName: "Main State Machine")
                     .view()
                     .aspectRatio(1, contentMode: .fit)
                 
-                RiveViewModel(fileName: "leg_day_events_example", stateMachineName: "Don't Skip Leg Day")
-                    .view()
-                    .aspectRatio(1, contentMode: .fit)
-                
-                ClockViewModel()
-                    .view()
-                    .aspectRatio(1, contentMode: .fit)
+//                RiveViewModel(fileName: "magic_8-ball_v2", stateMachineName: "Main State Machine")
+//                    .view()
+//                    .aspectRatio(1, contentMode: .fit)
+//
+//                RiveViewModel(fileName: "leg_day_events_example", stateMachineName: "Don't Skip Leg Day")
+//                    .view()
+//                    .aspectRatio(1, contentMode: .fit)
+//
+//                ClockViewModel()
+//                    .view()
+//                    .aspectRatio(1, contentMode: .fit)
             }
         }
     }
 }
-
-
-//struct SwiftSwitchEvent: DismissableView {
-//    var dismiss: () -> Void = {}
-//
-//    var body: some View {
-//        RiveViewModel(fileName: "switch_event_example", stateMachineName: "Main State Machine").view()
-//    }
-//}
-//
-
-
