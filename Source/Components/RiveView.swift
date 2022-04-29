@@ -538,6 +538,10 @@ extension RiveView {
         }
         
         for stateMachine in stateMachines where playingStateMachines.contains(stateMachine) {
+            // TODO: Needs potential fix
+            // We get a false returned in certain unexpected situations
+            // in state_machine_instance.cpp, StateMachineLayerInstance, .advance()
+            // The instance is removed from the playable state machines
             let stillPlaying = stateMachine.advance(by: delta)
             
             stateMachine.stateChanges().forEach { stateChangeDelegate?.stateChange(stateMachine.name(), $0) }
@@ -781,9 +785,7 @@ extension RiveView {
     }
     
     private func _stateMachines(withAnimationNames animationNames: [String]) -> [RiveStateMachineInstance] {
-        return stateMachines.filter {
-            animationNames.contains($0.stateMachine().name())
-        }
+        return stateMachines.filter { animationNames.contains($0.stateMachine().name()) }
     }
     
     private func _play(animation: RiveLinearAnimationInstance, loop: Loop, direction: Direction) {
